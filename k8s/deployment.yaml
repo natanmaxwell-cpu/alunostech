@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alunos-tech
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alunos-tech
+  template:
+    metadata:
+      labels:
+        app: alunos-tech
+    spec:
+      containers:
+        - name: alunos-tech
+          image: alunos-tech:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_HTTP_PORTS
+              value: "8080"

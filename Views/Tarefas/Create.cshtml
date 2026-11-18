@@ -1,0 +1,36 @@
+@model AlunosTech.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Cadastrar Tarefa";
+}
+
+<h2>Cadastrar Tarefa</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Titulo" class="form-label">
+            Título
+        </label>
+        <input asp-for="Titulo" class="form-control" />
+        <span asp-validation-for="Titulo"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Descricao" class="form-label">
+            Descrição
+        </label>
+        <textarea asp-for="Descricao"
+                  class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Salvar
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Voltar
+    </a>
+
+</form>
